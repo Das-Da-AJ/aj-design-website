@@ -112,8 +112,8 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe service cards and value items
-document.querySelectorAll('.service-card, .value-item').forEach(item => {
+// Observe service cards, value items, and project cards
+document.querySelectorAll('.service-card, .value-item, .project-card').forEach(item => {
     item.style.opacity = '0';
     item.style.transform = 'translateY(20px)';
     item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

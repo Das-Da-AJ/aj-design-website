@@ -20,6 +20,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation">
@@ -152,6 +153,46 @@
                     <h3>Performance Optimization</h3>
                     <p>Enhancing app performance, speed, and efficiency to provide the best user experience.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Work</h2>
+                <p class="section-subtitle">Projects we've built — live, deployed, and ready to explore</p>
+            </div>
+            <div class="portfolio-grid">
+
+                <!-- Project: Comic Book Generator -->
+                <div class="project-card">
+                    <div class="project-banner">
+                        <span class="project-category">AI &middot; Web App</span>
+                        <h3 class="project-name">Comic Book Generator</h3>
+                        <p class="project-tagline">Turn a hero, villain &amp; location into a full 10-panel comic</p>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-desc">
+                            AI-powered app that generates a structured 10-panel comic — script and art — from three inputs.
+                            GPT-4o handles narrative and cinematic direction; a multi-provider image pipeline (Pollinations.ai &rarr; xAI Grok Aurora) renders every panel with retries and fallbacks. Results export as a single PNG via html2canvas.
+                        </p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Next.js 14</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">OpenAI GPT-4o</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">html2canvas</span>
+                            <span class="skill-tag">Multi-provider APIs</span>
+                        </div>
+                        <a href="https://comic-book-generator.vercel.app/" class="btn btn-primary project-link" target="_blank" rel="noopener noreferrer">
+                            View Project
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
