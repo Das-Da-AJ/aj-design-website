@@ -36,8 +36,8 @@
         <div class="container">
             <div class="hero-content">
                 <img src="logo.png" alt="AJ design" class="hero-logo">
-                <h1 class="hero-title">AJ Design - lets build the future together</h1>
-                <p class="hero-subtitle">enabling business and consumers with the power of AI</p>
+                <h1 class="hero-title">Production-ready AI apps, built by a senior consultant</h1>
+                <p class="hero-subtitle">I bring 15 years of top-tier consulting rigour to software development. You deal directly with the person building your product — no hand-offs, no account managers.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Get Started</a>
                     <a href="#services" class="btn btn-secondary">Our Services</a>
@@ -54,28 +54,29 @@
                 <p class="section-subtitle">Crafting digital solutions with precision and passion</p>
             </div>
             <div class="about-content">
+                <img src="headshot.jpg" alt="Andrew Jordan" class="about-photo">
                 <div class="about-text">
                     <p>
-                        AJ design is an app development passionate about solving business and consumer problems with the power of AI. We use all of our technical expertise to create innovative mobile and web applications.
-                        With creativity and problem-solving abilities honed over our long careers we deliver solutions that exceed expectations and delight our clients.
+                        I'm Andrew — a senior consultant with over 15 years in top-tier professional services, currently at a Big 4 firm. My career has been spent advising governments and major corporates on large-scale infrastructure programs and complex commercial transactions, with over $30 billion in deals across the advisory, investment, and government sides.
                     </p>
                     <p>
-                        While we're in our early stages, our commitment to quality, attention to detail, and client-focused
-                        approach sets us apart. We believe in building long-term relationships with our clients and creating
-                        apps that make a real difference.
+                        Building products is what I do on the side — and increasingly, where my energy goes. I got tired of seeing powerful technology deployed slowly, and decided to learn to build it myself. Over the last two years I've been shipping AI-powered apps in production: real auth, real databases, real billing, real users.
+                    </p>
+                    <p>
+                        When you work with me, you get direct access to the person writing every line of code. No junior developers. Just someone who has spent 15 years learning what good delivery looks like — and is now applying that to software.
                     </p>
                     <div class="about-values">
                         <div class="value-item">
-                            <h3>Quality First</h3>
-                            <p>Every line of code is written with care and precision</p>
+                            <h3>Consultant Rigour</h3>
+                            <p>I apply the same structured thinking to code that I use on complex, multi-billion dollar programs.</p>
                         </div>
                         <div class="value-item">
-                            <h3>Client Focused</h3>
-                            <p>Your success is our success</p>
+                            <h3>Direct Access</h3>
+                            <p>You deal with me — the person designing, building, and shipping your product.</p>
                         </div>
                         <div class="value-item">
-                            <h3>Innovation</h3>
-                            <p>Staying ahead with the latest technologies and best practices</p>
+                            <h3>AI-Native</h3>
+                            <p>I build AI into products from day one, not as an afterthought. It's not a feature — it's the architecture.</p>
                         </div>
                     </div>
                 </div>
@@ -175,7 +176,10 @@
                     </div>
                     <div class="project-body">
                         <p class="project-desc">
-                            Full-stack health app where users sign up, complete an onboarding flow, and log daily weight, meals (text or photo), exercise, and water. Google Gemini estimates calories from descriptions or meal photos; Recharts visualises deficit trends and weight trajectory; BMR/TDEE is calculated automatically. Free tier covers unlimited text tracking; a Pro tier (Stripe) unlocks photo-based calorie recognition. Built with Australian Privacy Principles in mind — consent timestamps, data export, and a health disclaimer included.
+                            Most people trying to lose weight give up because tracking feels like a second job. Calisnap removes the friction — snap a meal photo or type a quick description, and AI handles the calorie maths.
+                        </p>
+                        <p class="project-desc">
+                            Users sign up, complete an onboarding flow, and log daily weight, meals, exercise, and water. Google Gemini estimates calories from text or photos; Recharts visualises deficit trends and weight trajectory; BMR/TDEE is calculated automatically. Free tier covers unlimited text tracking; a Pro tier (Stripe) unlocks photo-based calorie recognition. Built with Australian Privacy Principles in mind — consent timestamps, data export, and a health disclaimer included.
                         </p>
                         <div class="project-skills">
                             <span class="skill-tag">Next.js 15</span>
@@ -205,7 +209,9 @@
                     </div>
                     <div class="project-body">
                         <p class="project-desc">
-                            AI-powered app that generates a structured 10-panel comic — script and art — from three inputs.
+                            Bringing a story idea to life usually takes a team of writers and illustrators weeks. This app does it in minutes — from three inputs to a complete illustrated 10-panel comic, ready to export.
+                        </p>
+                        <p class="project-desc">
                             GPT-4o handles narrative and cinematic direction; a multi-provider image pipeline (Pollinations.ai &rarr; xAI Grok Aurora) renders every panel with retries and fallbacks. Results export as a single PNG via html2canvas.
                         </p>
                         <div class="project-skills">
@@ -236,16 +242,16 @@
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Ready to build something amazing?</h3>
+                    <h3>Let's build something together</h3>
                     <p>
-                        Whether you have a fully-formed idea or just a concept, we'd love to hear from you.
-                        Let's explore how we can bring your vision to life.
+                        Whether you have a fully-formed idea or just a concept, I'd love to hear from you.
+                        Let's talk about how I can bring your vision to life.
                     </p>
                     <div class="contact-details">
                         <p><strong>Email:</strong> <a href="mailto:ajdesign.au@gmail.com">ajdesign.au@gmail.com</a></p>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -259,6 +265,7 @@
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
+                    <p id="form-status" class="form-status"></p>
                 </form>
             </div>
         </div>
@@ -268,7 +275,6 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 AJ design. All rights reserved.</p>
-            <p class="footer-note">Early stage app development company</p>
         </div>
     </footer>
 

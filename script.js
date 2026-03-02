@@ -60,41 +60,41 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Form submission handler
+// Form submission handler (Formspree)
 const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('form-status');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    // Simple validation
-    if (!name || !email || !message) {
-        alert('Please fill in all fields.');
-        return;
+
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    formStatus.textContent = '';
+    formStatus.style.color = '';
+
+    try {
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { Accept: 'application/json' }
+        });
+
+        if (response.ok) {
+            formStatus.textContent = "Message sent — I'll be in touch soon.";
+            formStatus.style.color = '#16a34a';
+            contactForm.reset();
+        } else {
+            formStatus.textContent = 'Something went wrong. Please email me directly at ajdesign.au@gmail.com';
+            formStatus.style.color = '#dc2626';
+        }
+    } catch {
+        formStatus.textContent = 'Could not send — please email me directly at ajdesign.au@gmail.com';
+        formStatus.style.color = '#dc2626';
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
     }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
-    }
-    
-    // In a real implementation, you would send this to a backend
-    // For now, we'll just show a success message
-    alert(`Thank you for your message, ${name}! We'll get back to you at ${email} soon.`);
-    
-    // Reset form
-    contactForm.reset();
-    
-    // Note: In production, you would integrate with:
-    // - A backend API endpoint
-    // - Email service (SendGrid, Mailgun, etc.)
-    // - Form service (Formspree, Netlify Forms, etc.)
 });
 
 // Intersection Observer for fade-in animations
